@@ -16,11 +16,12 @@ public class schoolsearch {
 		public float GPA;
 		public String TLastName;
 		public String TFirstName;
-
-		public void Row() {}
 	}
 
 	public static void main(String[] args) {
+		// Init rows
+		rows = new ArrayList<Row>();
+
 		// Read file
 		try {
 			if (!initRows()) {
@@ -32,15 +33,12 @@ public class schoolsearch {
 			System.out.println("Error reading file");
 			return;
 		}
-
-		
-
 	}
 
 	private static boolean initRows() throws IOException {
 		BufferedReader bufferedReader;
 		String line;
-		
+
 		try {
 			FileReader fileReader = new FileReader("students.txt");
 			bufferedReader = new BufferedReader(fileReader);
