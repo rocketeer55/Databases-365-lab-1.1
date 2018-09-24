@@ -2,17 +2,20 @@
 Lab1 for CSC365
 
 *To Compile*
+
 Enter "javac schoolsearch.java"
 
 *To Run*
+
 Enter "java schoolsearch"
 
 *While Running*
+
 Follow on screen prompts:
 
-*(Brackets entail optional input, ex: S\[tudents]\ can be entered as "Students" or simply "S")
+*(Brackets entail optional input, ex: S\[tudents]\ can be entered as "Students" or simply "S")*
 
-(Angle brackets are input provided by the user)*
+*(Angle brackets are input provided by the user)*
 
   S\[tudent]\: <lastname> Provides the full name, grade, classroom, and name of teacher for the student(s) with the given last name.
   
