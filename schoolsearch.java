@@ -155,6 +155,7 @@ public class schoolsearch {
 		}
 
 		for (int i = 0; i < grades.length; i++) {
+			// For each grade, print out number of students in that grade
 			System.out.println(i + ": " + grades[i]);
 		}
 	}
@@ -168,7 +169,22 @@ public class schoolsearch {
 			// Incorrect input
 			return;
 		}
-		// TODO
+
+		float gpaSum = 0.f;
+		int students = 0;
+
+		for (int i = 0; i < rows.size(); i++) {
+			if (rows.get(i).Grade == number) {
+				gpaSum += rows.get(i).GPA;
+				students++;
+			}
+		}
+		if (students == 0) {
+			System.out.println(number + ": 0");
+		}
+		else {
+			System.out.println(number + ": " + (gpaSum / (float)students));
+		}
 	}
 
 	private static void printGrade(String numberString, int type) {
