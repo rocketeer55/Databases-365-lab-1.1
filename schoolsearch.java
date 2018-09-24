@@ -146,7 +146,17 @@ public class schoolsearch {
 	}
 
 	private static void printInfo() {
-		// TODO
+		int[] grades = new int[7];
+
+		for (int i = 0; i < rows.size(); i++) {
+			// Gets the grade of the student index i, then adds 1 to the entry for that grade in the grades array
+			// This increments the number of students in that grade by 1
+			grades[rows.get(i).Grade]++;
+		}
+
+		for (int i = 0; i < grades.length; i++) {
+			System.out.println(i + ": " + grades[i]);
+		}
 	}
 
 	private static void printAverage(String numberString) {
