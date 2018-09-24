@@ -85,7 +85,7 @@ public class schoolsearch {
 		}
 		else if (strings[0].equals("I") || strings[0].equals("Info")) {
 			// Print info
-			// TODO
+			printInfo();
 		}
 		else if (strings[0].equals("A:") || strings[0].equals("Average:")) {
 			if (strings.length != 2) {
@@ -93,20 +93,20 @@ public class schoolsearch {
 				return;
 			}
 			// Run Average search
-			// TODO
+			printAverage(strings[1]);
 		}
 		else if (strings[0].equals("G:") || strings[0].equals("Grade:")) {
 			if (strings.length == 2) {
 				// Run Grade search without high / low flag
-				// TODO
+				printGrade(strings[1], 0);
 			}
 			else if (strings.length == 3 && (strings[2].equals("H") || strings[2].equals("High"))) {
 				// Run Grade search with high flag
-				// TODO
+				printGrade(strings[1], 1);
 			}
 			else if (strings.length == 3 && (strings[2].equals("L") || strings[2].equals("Low"))) {
 				// Run Grade search with low flag
-				// TODO
+				printGrade(strings[1], 2);
 			}
 			else {
 				// Incorrect input
@@ -119,7 +119,7 @@ public class schoolsearch {
 				return;
 			}
 			// Run Bus search
-			// TODO
+			printBus(strings[1]);
 		}
 		else if (strings[0].equals("T:") || strings[0].equals("Teacher:")) {
 			if (strings.length != 2) {
@@ -127,21 +127,87 @@ public class schoolsearch {
 				return;
 			}
 			// Run Teacher search
-			// TODO
+			printTeacher(strings[1]);
 		}
 		else if (strings[0].equals("S:") || strings[0].equals("Student:")) {
 			if (strings.length == 2) {
 				// Run Student search without Bus flag
-				// TODO
+				printStudent(strings[1], false);
 			}
 			else if (strings.length == 3 && (strings[2].equals("B") || strings[2].equals("Bus"))) {
 				// Run Student search with Bus flag
-				// TODO
+				printStudent(strings[1], true);
 			}
 			else {
 				// Incorrect input
 				return;
 			}
+		}
+	}
+
+	private static void printInfo() {
+		// TODO
+	}
+
+	private static void printAverage(String numberString) {
+		int number;
+		try {
+			number = Integer.parseInt(numberString);
+		}
+		catch (Exception e) {
+			// Incorrect input
+			return;
+		}
+		// TODO
+	}
+
+	private static void printGrade(String numberString, int type) {
+		int number;
+		try {
+			number = Integer.parseInt(numberString);
+		}
+		catch (Exception e) {
+			// Incorrect input
+			return;
+		}
+		if (type == 0) {
+			// No high / low flag
+			// TODO
+		}
+		else if (type == 1) {
+			// high flag
+			// TODO
+		}
+		else {
+			// low flag
+			// TODO
+		}
+	}
+
+	private static void printBus(String numberString) {
+		int number;
+		try {
+			number = Integer.parseInt(numberString);
+		}
+		catch (Exception e) {
+			// Incorrect input
+			return;
+		}
+		// TODO
+	}
+
+	private static void printTeacher(String lastname) {
+		// TODO
+	}
+
+	private static void printStudent(String lastname, boolean busFlag) {
+		if (busFlag) {
+			// bus flag present
+			// TODO
+		}
+		else {
+			// bus flag not present
+			// TODO
 		}
 	}
 }
