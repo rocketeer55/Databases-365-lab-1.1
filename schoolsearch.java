@@ -196,17 +196,50 @@ public class schoolsearch {
 			// Incorrect input
 			return;
 		}
+
 		if (type == 0) {
 			// No high / low flag
-			// TODO
+			for (int i = 0; i < rows.size(); i++) {
+				if (rows.get(i).Grade == number) {
+					// Provided number matches student's grade
+					System.out.println(rows.get(i).StLastName + ", " + rows.get(i).StFirstName);
+				}
+			}
 		}
 		else if (type == 1) {
 			// high flag
-			// TODO
+			Row temp = new Row();
+			for (int i = 0; i < rows.size(); i++) {
+				if (rows.get(i).Grade == number) {
+					// Provided number matches student's grade
+					if (rows.get(i).GPA > temp.GPA) {
+						temp = rows.get(i);
+					}
+				}
+			}
+			if (temp.StFirstName != null) {
+				// If temp isn't blank
+				System.out.println(temp.StLastName + ", " + temp.StFirstName + ", " + 
+					temp.GPA + ", " + temp.TLastName + ", " + temp.TFirstName + ", " + temp.Bus);
+			}
 		}
 		else {
 			// low flag
-			// TODO
+			Row temp = new Row();
+			temp.GPA = Float.MAX_VALUE;
+			for (int i = 0; i < rows.size(); i++) {
+				if (rows.get(i).Grade == number) {
+					// Provided number matches student's grade
+					if (rows.get(i).GPA < temp.GPA) {
+						temp = rows.get(i);
+					}
+				}
+			}
+			if (temp.StFirstName != null) {
+				// If temp isn't blank
+				System.out.println(temp.StLastName + ", " + temp.StFirstName + ", " + 
+					temp.GPA + ", " + temp.TLastName + ", " + temp.TFirstName + ", " + temp.Bus);
+			}
 		}
 	}
 
@@ -219,21 +252,45 @@ public class schoolsearch {
 			// Incorrect input
 			return;
 		}
-		// TODO
+		
+		for (int i = 0; i < rows.size(); i++) {
+			if (rows.get(i).Bus == number) {
+				// Provided number matches student's bus
+				System.out.println(rows.get(i).StLastName + ", " + rows.get(i).StFirstName + ", " + 
+					rows.get(i).Grade + ", " + rows.get(i).Classroom);
+			}
+		}
 	}
 
 	private static void printTeacher(String lastname) {
-		// TODO
+		for (int i = 0; i < rows.size(); i++) {
+			if (rows.get(i).TLastName.equals(lastname)) {
+				// Provided lastname matches student's teacher's lastname
+				System.out.println(rows.get(i).StLastName + ", " + rows.get(i).StFirstName);
+			}
+		}
 	}
 
 	private static void printStudent(String lastname, boolean busFlag) {
 		if (busFlag) {
 			// bus flag present
-			// TODO
+			for (int i = 0; i < rows.size(); i++) {
+				if (rows.get(i).StLastName.equals(lastname)) {
+					// Provided lastname matches student's lastname
+					System.out.println(rows.get(i).StLastName + ", " + rows.get(i).StFirstName + ", " + rows.get(i).Bus);
+				}
+			}
 		}
 		else {
 			// bus flag not present
-			// TODO
+			for (int i = 0; i < rows.size(); i++) {
+				if (rows.get(i).StLastName.equals(lastname)) {
+					// Provided lastname matches student's lastname
+					System.out.println(rows.get(i).StLastName + ", " + rows.get(i).StFirstName + ", " + 
+						rows.get(i).Grade + ", " + rows.get(i).Classroom + ", " + 
+						rows.get(i).TLastName + ", " + rows.get(i).TFirstName);
+				}
+			}
 		}
 	}
 }
