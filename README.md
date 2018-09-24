@@ -14,7 +14,7 @@ Follow on screen prompts:
 
   S\[tudent]\: <lastname> Provides the full name, grade, classroom, and name of teacher for the student(s) with the given last name.
   
-  S\[tudent]\: <lastname> B\[us]\ Provides the full name and bus information for the student(s) with the given last name.
+  S\[tudent]\: <lastname> B\[us] Provides the full name and bus information for the student(s) with the given last name.
   
   T\[eacher]\: <lastname> Provides the full names of all the students taught by the given teacher.  
   
