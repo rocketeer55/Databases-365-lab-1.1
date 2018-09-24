@@ -1,19 +1,19 @@
 # Databases-365-lab-1.1
 Lab1 for CSC365
 
-*To Compile*
+*To Compile:*
 
 Enter "javac schoolsearch.java"
 
-*To Run*
+*To Run:*
 
 Enter "java schoolsearch"
 
-*While Running*
+*While Running:*
 
 Follow on screen prompts:
 
-*(Brackets entail optional input, ex: S\[tudents]\ can be entered as "Students" or simply "S")*
+*(Brackets entail optional input, ex: S\[tudents] can be entered as "Students" or simply "S")*
 
 *(Angle brackets are input provided by the user)*
 
