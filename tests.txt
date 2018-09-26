@@ -1,0 +1,241 @@
+// CSC 365, Fall 2018
+// Jackson Goyette, Spencer Schurk
+// Lab 1-1 test suite
+
+//Test 1
+//Testing: R3, R4
+//Short command, valid student
+//Expected: Berbes, Dick, 2, 108, Hamer, Gavin
+
+S: BERBES
+
+//Test 2
+//Testing: R3, R4
+//Long command, valid student
+//Expected: Como, Zandra, 4, 112, Chionchio, Perla
+
+Student: COMO
+
+//Test 3
+//Testing: R3, R4
+//Short command, invalid student
+//Expected: no output
+
+S: YICHAEL
+
+//Test 4
+//Testing: R3, R5
+//Short command, valid student, Bus flag
+//Expected: COOKUS, XUAN, 52
+
+S: COOKUS B
+
+//Test 5
+//Testing: R3, R5
+//Long command, valid student, Bus flag
+//Expected: COOKUS, XUAN, 52
+
+Student: COOKUS B
+
+//Test 6
+//Testing: R3, R5
+//Short command, invalid student
+//Expected: no output
+
+Student: NOT_A_STUDENT B
+
+//Test 7
+//Testing R3, R6
+//Short command, valid teacher
+//Expected: BRODERSEN, HYE\n THEUNISSEN, GRACE
+
+T: ALPERT
+
+//Test 8
+//Testing R3, R6
+//Long command, valid teacher
+//Expected: BRODERSEN, HYE\n THEUNISSEN, GRACE
+
+Teacher: ALPERT
+
+//Test 9
+//Testing R3, R6
+//Short command, invalid teacher
+//Expected: no output
+
+Teacher: NOT_A_TEACHER
+
+//Test 10
+//Testing R3, R7
+//Short command, valid grade with students
+//Expected: SAELEE, DANILO\n GARTH, JOHN
+
+G: 1
+
+//Test 11
+//Testing R3, R7
+//Long command, valid grade with students
+//Expected: SAELEE, DANILO\n GARTH, JOHN
+
+Grade: 1
+
+//Test 12
+//Testing R3, R7
+//Short command, valid grade with no students
+//Expected: no output
+
+G: 0
+
+//Test 13
+//Testing R3, R7
+//Short command, invalid grade
+//Expected: no output
+
+G: 50
+
+//ALL R9 tests use short command, as long command "Grade:" was tested in R7
+//Test 14
+//Testing R3, R9
+//Short command, valid grade, H flag
+//Expected: GARTH, JOHN, 3.14, FALKER, ADOLPH, 0
+
+G: 1 H
+
+//Test 15
+//Testing R3, R9
+//Short command, valid grade, High flag
+//Expected: GARTH, JOHN, 3.14, FALKER, ADOLPH, 0
+
+G: 1 High
+
+//Test 16
+//Testing R3, R9
+//Short command, grade with 0 students, H flag
+//Expected: no output
+
+G: 0 H
+
+//Test 17
+//Testing R3, R9
+//Short command, valid grade, L flag
+//Expected: SAELEE, DANILO, 2.85, FALKER, ADOLPH, 54
+
+G: 1 L
+
+//Test 18
+//Testing R3, R9
+//Short command, valid grade, Low flag
+//Expected: SAELEE, DANILO, 2.85, FALKER, ADOLPH, 54
+
+G: 1 Low
+
+//Test 19
+//Testing R3, R9
+//Short command, grade with 0 students, L flag
+//Expected: no output
+
+G: 0 L
+
+//Test 20
+//Testing R3, R8
+//Short command, valid bus number
+//Expected: RACANELLO, NOEL, 6, 102\n VILARDO, EMMANUEL, 2, 104\n KRAKE, VALENTIN, 6, 109\n BEAN, INGER, 6, 111\n BUSSMANN, BILLY, 2, 108\n FEYEREISEN, WILFREDO, 6, 111
+
+B: 56
+
+//Test 21
+//Testing R3, R8
+//Long command, valid bus number
+//Expected: RACANELLO, NOEL, 6, 102\n VILARDO, EMMANUEL, 2, 104\n KRAKE, VALENTIN, 6, 109\n BEAN, INGER, 6, 111\n BUSSMANN, BILLY, 2, 108\n FEYEREISEN, WILFREDO, 6, 111
+
+Bus: 56
+
+//Test 22
+//Testing R3, R8
+//Short command, invalid bus number / route with no riders
+//Expected: no output
+
+B: 1
+
+//Test 23
+//Testing R3, R10
+//Short command, valid grade
+//Expected: 1: 2.995
+
+A: 1
+
+//Test 24
+//Testing R3, R10
+//Long command, valid grade
+//Expected: 1: 2.995
+
+Average: 1
+
+//Test 25
+//Testing R3, R10
+//Short command, grade with no students
+//Expected: 0: 0
+
+A: 0
+
+//Test 26
+//Testing R3, R10
+//Short command, invalid grade
+//Expected: no output
+
+A: 50
+
+//Test 27
+//Testing R3, R11
+//Short command
+//Expected: 0: 0\n 1: 2\n 2: 13\n 3: 9\n 4: 15\n 5: 0\n 6: 21
+
+I
+
+//Test 28
+//Testing R3, R11
+//Long command
+//Expected: 0: 0\n 1: 2\n 2: 13\n 3: 9\n 4: 15\n 5: 0\n 6: 21
+
+Info
+
+//Test 29
+//Testing R3, R12
+//Short command
+//Expected: Program exits gracefully
+
+Q
+
+//Test 30
+//Testing R3, R12
+//Long command
+//Expected: Program exits gracefully
+
+Quit
+
+//Test 31
+//Testing R13
+//File exists, named correctly, in correct directory
+//Expected: File 'students.txt' successfully loaded
+
+//Test 32
+//Testing E1
+//File does not exist
+//Expected: Error reading file - then program quits gracefully
+
+//Test 33
+//Testing E1
+//Invalid search instruction
+//Expected: no output
+
+Test_Instruction:
+
+//Test 34
+//Testing R1
+//Compile and run program on lab machine
+//Expected: Program runs correctly and passes all of these tests
+
+//Test 35
+//Testing R2 
+//Invoke the program without command line parameters
+//Expected: Program runs correctly and passes all of these tests
