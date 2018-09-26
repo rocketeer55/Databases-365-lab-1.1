@@ -1,5 +1,8 @@
 # Databases-365-lab-1.1
-Lab1 for CSC365 by Spencer Schurk & Jackson Goyette
+Jackson Goyette, Spencer Schurk
+
+Lab1 for CSC365
+>>>>>>> 3fc7a4fb091cfdbe70abd2e46792692b9787599f
 
 *To Compile:*
 
