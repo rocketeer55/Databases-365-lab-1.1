@@ -21,42 +21,58 @@ public class schoolsearch {
 		public String TFirstName;
 	}
 
+	// Traceability: implements requirements R1, R2, E1
 	public static void main(String[] args) {
 		quit = false;
 		// Init rows
-		rows = new ArrayList<Row>();
+		ArrayList<Row> students;
+		ArrayList<Row> teachers;
 
-		// Read file
+		// Read students file
 		try {
-			initRows();
-			System.out.println("File \'students.txt\' successfully loaded");
+			students = initStudents();
+			System.out.println("File \'list.txt\' successfully loaded");
 		}
 		catch (Exception e) {
-			System.out.println("Error reading file");
+			System.out.println("Error reading file \'list.txt\'");
 			return;
 		}
+
+		// Read teachers file
+		try {
+			teachers = initTeachers();
+			System.out.println("File \'teachers.txt\' successfully loaded");
+		}
+		catch (Exception e) {
+			System.out.println("Error reading file \'teachers.txt\'");
+			return;
+		}
+
+		// Merge the two into rows
+
+		mergeStudentsAndTeachers(students, teachers);
 
 		while (!quit) {
 			// Ask for input until user quits
 			System.out.println("Please enter a search instruction, or enter \'Q\' to quit");
 			handleInput();
 		}
-
-		//
 	}
 
-	private static void initRows() throws IOException, FileNotFoundException, NumberFormatException, Exception {
+	// Traceability: implements requirements R13, E1
+
+	private static ArrayList<Row> initStudents() throws IOException, FileNotFoundException, NumberFormatException, Exception {
+		ArrayList<Row> students = new ArrayList<Row>();
 		BufferedReader bufferedReader;
 		String line;
 
-		FileReader fileReader = new FileReader("students.txt");
-		bufferedReader = new BufferedReader(fileReader);
+		bufferedReader = new BufferedReader(new FileReader("list.txt"));
 
 		while ((line = bufferedReader.readLine()) != null) {
 			String[] strings = line.split(",", 0);
 			Row temp = new Row();
 
-			if (strings.length != 8) {
+			if (strings.length != 6) {
 				bufferedReader.close();
 				throw new Exception();
 			}
@@ -67,13 +83,59 @@ public class schoolsearch {
 			temp.Classroom = Integer.parseInt(strings[3]);
 			temp.Bus = Integer.parseInt(strings[4]);
 			temp.GPA = Float.parseFloat(strings[5]);
-			temp.TLastName = strings[6];
-			temp.TFirstName = strings[7];
 
-			rows.add(temp);
+			students.add(temp);
 		}
 
 		bufferedReader.close();
+
+		return students;
+	}
+
+	// Traceability: implements requirements R13, E1
+
+	private static ArrayList<Row> initTeachers() throws IOException, FileNotFoundException, NumberFormatException, Exception {
+		ArrayList<Row> teachers = new ArrayList<Row>();
+		BufferedReader bufferedReader;
+		String line;
+
+		bufferedReader = new BufferedReader(new FileReader("teachers.txt"));
+
+		while ((line = bufferedReader.readLine()) != null) {
+			String[] strings = line.split(",", 0);
+			Row temp = new Row();
+
+			if (strings.length != 3) {
+				bufferedReader.close();
+				throw new Exception();
+			}
+
+			temp.TLastName = strings[0];
+			temp.TFirstName = strings[1];
+			temp.Classroom = Integer.parseInt(strings[2].trim());
+
+			teachers.add(temp);
+		}
+
+		bufferedReader.close();
+
+		return teachers;
+	}
+
+	private static void mergeStudentsAndTeachers(ArrayList<Row> students, ArrayList<Row> teachers) {
+		for (int i = 0; i < students.size(); i++) {
+			// Loop through list of teachers, find matching classroom
+			for (int j = 0; j < teachers.size(); j++) {
+				if (students.get(i).Classroom == teachers.get(j).Classroom) {
+					// Matches! teacher must be student's teacher
+					students.get(i).TLastName = teachers.get(j).TLastName;
+					students.get(i).TFirstName = teachers.get(j).TFirstName;
+					continue;
+				}
+			}
+		}
+
+		rows = students;
 	}
 
 	private static void handleInput() {
