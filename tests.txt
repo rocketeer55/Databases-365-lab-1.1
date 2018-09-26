@@ -7,21 +7,21 @@
 //Short command, valid student
 //Expected: Berbes, Dick, 2, 108, Hamer, Gavin
 
-S: Berbes
+S: BERBES
 
 //Test 2
 //Testing: R3, R4
 //Long command, valid student
 //Expected: Como, Zandra, 4, 112, Chionchio, Perla
 
-Student: Como
+Student: COMO
 
 //Test 3
 //Testing: R3, R4
 //Short command, invalid student
 //Expected: no output
 
-S: Yichael
+S: YICHAEL
 
 //Test 4
 //Testing: R3, R5

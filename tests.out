@@ -1,0 +1,114 @@
+sschurk@unix3:~/csc365/lab1/part1 $ java schoolsearch
+File 'students.txt' successfully loaded
+Please enter a search instruction, or enter 'Q' to quit
+S: BERBES
+BERBES, DICK, 2, 108, HAMER, GAVIN
+Please enter a search instruction, or enter 'Q' to quit
+Student: COMO
+COMO, ZANDRA, 4, 112, CHIONCHIO, PERLA
+Please enter a search instruction, or enter 'Q' to quit
+S: YICHAEL
+Please enter a search instruction, or enter 'Q' to quit
+S: COOKUS B
+COOKUS, XUAN, 52
+Please enter a search instruction, or enter 'Q' to quit
+Student: COOKUS B
+COOKUS, XUAN, 52
+Please enter a search instruction, or enter 'Q' to quit
+Student: NOT_A_STUDENT B
+Please enter a search instruction, or enter 'Q' to quit
+T: ALPERT
+BRODERSEN, HYE
+THEUNISSEN, GRACE
+Please enter a search instruction, or enter 'Q' to quit
+Teacher: ALPERT
+BRODERSEN, HYE
+THEUNISSEN, GRACE
+Please enter a search instruction, or enter 'Q' to quit
+G: 1
+SAELEE, DANILO
+GARTH, JOHN
+Please enter a search instruction, or enter 'Q' to quit
+Grade: 1
+SAELEE, DANILO
+GARTH, JOHN
+Please enter a search instruction, or enter 'Q' to quit
+G: 0
+Please enter a search instruction, or enter 'Q' to quit
+G: 50
+Please enter a search instruction, or enter 'Q' to quit
+G: 1 H
+GARTH, JOHN, 3.14, FALKER, ADOLPH, 0
+Please enter a search instruction, or enter 'Q' to quit
+G: 1 High
+GARTH, JOHN, 3.14, FALKER, ADOLPH, 0
+Please enter a search instruction, or enter 'Q' to quit
+G: 0 H
+Please enter a search instruction, or enter 'Q' to quit
+G: 1 L
+SAELEE, DANILO, 2.85, FALKER, ADOLPH, 54
+Please enter a search instruction, or enter 'Q' to quit
+G: 1 Low
+SAELEE, DANILO, 2.85, FALKER, ADOLPH, 54
+Please enter a search instruction, or enter 'Q' to quit
+G: 0 L
+Please enter a search instruction, or enter 'Q' to quit
+B: 56
+RACANELLO, NOEL, 6, 102
+VILARDO, EMMANUEL, 2, 104
+KRAKE, VALENTIN, 6, 109
+BEAN, INGER, 6, 111
+BUSSMANN, BILLY, 2, 108
+FEYEREISEN, WILFREDO, 6, 111
+Please enter a search instruction, or enter 'Q' to quit
+Bus: 56
+RACANELLO, NOEL, 6, 102
+VILARDO, EMMANUEL, 2, 104
+KRAKE, VALENTIN, 6, 109
+BEAN, INGER, 6, 111
+BUSSMANN, BILLY, 2, 108
+FEYEREISEN, WILFREDO, 6, 111
+Please enter a search instruction, or enter 'Q' to quit
+B: 1
+Please enter a search instruction, or enter 'Q' to quit
+A: 1
+1: 2.995
+Please enter a search instruction, or enter 'Q' to quit
+Average: 1
+1: 2.995
+Please enter a search instruction, or enter 'Q' to quit
+A: 0
+0: 0
+Please enter a search instruction, or enter 'Q' to quit
+A: 50
+Please enter a search instruction, or enter 'Q' to quit
+I
+0: 0
+1: 2
+2: 13
+3: 9
+4: 15
+5: 0
+6: 21
+Please enter a search instruction, or enter 'Q' to quit
+Info
+0: 0
+1: 2
+2: 13
+3: 9
+4: 15
+5: 0
+6: 21
+Please enter a search instruction, or enter 'Q' to quit
+Q
+sschurk@unix3:~/csc365/lab1/part1 $ java schoolsearch
+File 'students.txt' successfully loaded
+Please enter a search instruction, or enter 'Q' to quit
+Quit
+sschurk@unix3:~/csc365/lab1/part1 $ java schoolsearch
+Error reading file
+sschurk@unix3:~/csc365/lab1/part1 $ java schoolsearch
+File 'students.txt' successfully loaded
+Please enter a search instruction, or enter 'Q' to quit
+Test_Instruction:
+Please enter a search instruction, or enter 'Q' to quit
