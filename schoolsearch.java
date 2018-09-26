@@ -170,6 +170,10 @@ public class schoolsearch {
 			return;
 		}
 
+		if (number > 10) {
+			return;
+		}
+
 		float gpaSum = 0.f;
 		int students = 0;
 
