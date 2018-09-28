@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.io.IOException;
 import java.io.FileNotFoundException;
+import java.util.Collections;
 
 public class schoolsearch {
 	private static ArrayList<Row> rows;
@@ -78,8 +79,8 @@ public class schoolsearch {
 				throw new Exception();
 			}
 
-			temp.StLastName = strings[0];
-			temp.StFirstName = strings[1];
+			temp.StLastName = strings[0].trim();
+			temp.StFirstName = strings[1].trim();
 			temp.Grade = Integer.parseInt(strings[2]);
 			temp.Classroom = Integer.parseInt(strings[3]);
 			temp.Bus = Integer.parseInt(strings[4]);
@@ -111,8 +112,8 @@ public class schoolsearch {
 				throw new Exception();
 			}
 
-			temp.TLastName = strings[0];
-			temp.TFirstName = strings[1];
+			temp.TLastName = strings[0].trim();
+			temp.TFirstName = strings[1].trim();
 			temp.Classroom = Integer.parseInt(strings[2].trim());
 
 			teachers.add(temp);
@@ -209,6 +210,34 @@ public class schoolsearch {
 				// Incorrect input
 				return;
 			}
+		}
+		else if (strings[0].equals("CS:") || strings[0].equals("ClassroomStudents:")) {
+			if (strings.length != 2) {
+				// Incorrect input
+				return;
+			}
+			// Run Classroom Students search
+			printClassStudent(strings[1]);
+		}
+		else if (strings[0].equals("CT:") || strings[0].equals("ClassroomTeachers:")) {
+			if (strings.length != 2) {
+				// Incorrect input
+				return;
+			}
+			// Run Classroom Teachers search
+			printClassTeacher(strings[1]);
+		}
+		else if (strings[0].equals("GT:") || strings[0].equals("GradeTeachers:")) {
+			if (strings.length != 2) {
+				// Incorrect input
+				return;
+			}
+			// Run Grade Teachers search
+			printGradeTeacher(strings[1]);
+		}
+		else if (strings[0].equals("E") || strings[0].equals("Enrollment")) {
+			// Run Enrollment search
+			printEnrollment();
 		}
 	}
 
@@ -374,6 +403,111 @@ public class schoolsearch {
 						rows.get(i).TLastName + ", " + rows.get(i).TFirstName);
 				}
 			}
+		}
+	}
+
+	//Traceability: implements requirements NR1
+	
+	private static void printClassStudent(String classString) {
+		int number;
+		try {
+			number = Integer.parseInt(classString);
+		}
+		catch (Exception e) {
+			// Incorrect input
+			return;
+		}
+		
+		for (int i = 0; i < rows.size(); i++) {
+			if (rows.get(i).Classroom == number) {
+				// Provided number matches teacher's classroom
+				System.out.println(rows.get(i).StLastName + ", " + rows.get(i).StFirstName);
+			}
+		}
+	
+	}
+
+	//Traceability: implements requirements NR2
+
+	private static void printClassTeacher(String classString) {
+		int number;
+		ArrayList<String> teachers = new ArrayList<String>();
+		try {
+			number = Integer.parseInt(classString);
+		}
+		catch (Exception e) {
+			// Incorrect input
+			return;
+		}
+
+		for (int i = 0; i < rows.size(); i++) {
+			if (rows.get(i).Classroom == number && !teachers.contains(rows.get(i).TLastName)) {
+				teachers.add(rows.get(i).TLastName);
+				System.out.println(rows.get(i).TLastName + ", " + rows.get(i).TFirstName);
+			}
+		}
+	}
+	
+	//Traceability: implements requirements NR3
+
+	private static void printGradeTeacher(String gradeString) {
+		int number;
+		ArrayList<String> teachList = new ArrayList<String>();
+		try {
+			number = Integer.parseInt(gradeString);
+		}
+		catch (Exception e) {
+			// Incorrect input
+			return;
+		}
+		
+		for (int i = 0; i < rows.size(); i++) {
+			if (rows.get(i).Grade == number && !teachList.contains(rows.get(i).TLastName)) {
+				// Provided number matches teacher's grade
+				teachList.add(rows.get(i).TLastName);
+				System.out.println(rows.get(i).TLastName + ", " + rows.get(i).TFirstName);
+			}
+		}
+	}
+
+	//Traceability: implements requirements NR4
+	
+	private static void printEnrollment() {
+		class Classroom implements Comparable<Classroom> {
+			int classroomNumber;
+			int numberStudents;
+
+			public int compareTo(Classroom other) {
+				if (this.classroomNumber < other.classroomNumber) {
+					return -1;
+				}
+				return 1;
+			}
+		}
+		ArrayList<Classroom> enrollment = new ArrayList<Classroom>();
+
+		for (int i = 0; i < rows.size(); i++) {
+			//Check if classroom in enrollment
+			boolean classroomAlreadyExists = false;
+			for (int j = 0; j < enrollment.size(); j++) {
+				if (enrollment.get(j).classroomNumber == rows.get(i).Classroom) {
+					//Student's classroom already in list. Increment numberStudents
+					enrollment.get(j).numberStudents++;
+					classroomAlreadyExists = true;
+				}
+			}
+			if (!classroomAlreadyExists) {
+				Classroom temp = new Classroom();
+				temp.classroomNumber = rows.get(i).Classroom;
+				temp.numberStudents = 1;
+				enrollment.add(temp);
+			}
+		}
+
+		Collections.sort(enrollment);
+
+		for (int i = 0; i < enrollment.size(); i++) {
+			System.out.println(enrollment.get(i).classroomNumber + ": " + enrollment.get(i).numberStudents);
 		}
 	}
 }
