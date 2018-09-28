@@ -22,6 +22,7 @@ public class schoolsearch {
 	}
 
 	// Traceability: implements requirements R1, R2, E1
+
 	public static void main(String[] args) {
 		quit = false;
 		// Init rows
@@ -138,6 +139,8 @@ public class schoolsearch {
 		rows = students;
 	}
 
+	//Traceability: implements requirement R3
+
 	private static void handleInput() {
 		// Read in the whole user's input line and split it by spaces
 		String line = System.console().readLine();
@@ -209,6 +212,8 @@ public class schoolsearch {
 		}
 	}
 
+	//Traceability: implements requirements R3, R11
+
 	private static void printInfo() {
 		int[] grades = new int[7];
 
@@ -223,6 +228,8 @@ public class schoolsearch {
 			System.out.println(i + ": " + grades[i]);
 		}
 	}
+
+	//Traceability: implements requirements R3, R10
 
 	private static void printAverage(String numberString) {
 		int number;
@@ -254,6 +261,8 @@ public class schoolsearch {
 			System.out.println(number + ": " + (gpaSum / (float)students));
 		}
 	}
+
+	//Traceability: implements requirements R3, R7, R9
 
 	private static void printGrade(String numberString, int type) {
 		int number;
@@ -311,6 +320,8 @@ public class schoolsearch {
 		}
 	}
 
+	//Traceability: implements requirements R3, R8
+
 	private static void printBus(String numberString) {
 		int number;
 		try {
@@ -330,6 +341,8 @@ public class schoolsearch {
 		}
 	}
 
+	//Traceability: implements requirements R3, R6
+
 	private static void printTeacher(String lastname) {
 		for (int i = 0; i < rows.size(); i++) {
 			if (rows.get(i).TLastName.equals(lastname)) {
@@ -338,6 +351,8 @@ public class schoolsearch {
 			}
 		}
 	}
+
+	//Traceability: implements requirements R3, R4, R5
 
 	private static void printStudent(String lastname, boolean busFlag) {
 		if (busFlag) {
