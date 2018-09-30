@@ -239,6 +239,27 @@ public class schoolsearch {
 			// Run Enrollment search
 			printEnrollment();
 		}
+		else if (strings[0].equals("An:") || strings[0].equals("Analytics:")) {
+			int mode = -1;
+			if (strings.length != 2) {
+				// Incorrect input
+				return;
+			}
+			if (strings[1].equals("G") || strings[1].equals("Grade")) {
+				mode = 0;
+			}
+			else if (strings[1].equals("T") || strings[1].equals("Teacher")) {
+				mode = 1;
+			}
+			else if (strings[1].equals("B") || strings[1].equals("Bus")) {
+				mode = 2;
+			}
+			else {
+				// Incorrect input
+				return;
+			}
+			printAnalytics(mode);
+		}
 	}
 
 	//Traceability: implements requirements R3, R11
@@ -406,7 +427,7 @@ public class schoolsearch {
 		}
 	}
 
-	//Traceability: implements requirements NR1
+	//Traceability: implements requirement NR1
 	
 	private static void printClassStudent(String classString) {
 		int number;
@@ -427,7 +448,7 @@ public class schoolsearch {
 	
 	}
 
-	//Traceability: implements requirements NR2
+	//Traceability: implements requirement NR2
 
 	private static void printClassTeacher(String classString) {
 		int number;
@@ -448,7 +469,7 @@ public class schoolsearch {
 		}
 	}
 	
-	//Traceability: implements requirements NR3
+	//Traceability: implements requirement NR3
 
 	private static void printGradeTeacher(String gradeString) {
 		int number;
@@ -470,7 +491,7 @@ public class schoolsearch {
 		}
 	}
 
-	//Traceability: implements requirements NR4
+	//Traceability: implements requirement NR4
 	
 	private static void printEnrollment() {
 		class Classroom implements Comparable<Classroom> {
@@ -508,6 +529,92 @@ public class schoolsearch {
 
 		for (int i = 0; i < enrollment.size(); i++) {
 			System.out.println(enrollment.get(i).classroomNumber + ": " + enrollment.get(i).numberStudents);
+		}
+	}
+
+	//Traceability: implements requirement NR5
+
+	private static void printAnalytics(int mode) {
+		if (mode == 0) {
+			// Analytics based on grade level
+			ArrayList<ArrayList<Float>> GPAs = new ArrayList<ArrayList<Float>>(7);
+			for (int i = 0; i < 7; i++) {
+				GPAs.add(new ArrayList<Float>());
+			}
+
+			for (int i = 0; i < rows.size(); i++) {
+				GPAs.get(rows.get(i).Grade).add(rows.get(i).GPA);
+			}
+
+			for (int i = 0; i < GPAs.size(); i++) {
+				if (!(GPAs.get(i).size() == 0)) {
+					float GPAsum = 0;
+					for (int j = 0; j < GPAs.get(i).size(); j++) {
+						GPAsum += GPAs.get(i).get(j);
+					}
+					System.out.println(i + ": " + (GPAsum / GPAs.get(i).size()));
+				}
+			}
+		}
+		else if (mode == 1) {
+			// Analytics based on teacher
+			ArrayList<String> teachers = new ArrayList<String>();
+
+			for (int i = 0; i < rows.size(); i++) {
+				if (!teachers.contains(rows.get(i).TLastName)) {
+					teachers.add(rows.get(i).TLastName);
+				}
+			}
+
+			ArrayList<ArrayList<Float>> GPAs = new ArrayList<ArrayList<Float>>();
+			for (int i = 0; i < teachers.size(); i++) {
+				GPAs.add(new ArrayList<Float>());
+			}
+
+			for (int i = 0; i < rows.size(); i++) {
+				int index = teachers.indexOf(rows.get(i).TLastName);
+				GPAs.get(index).add(rows.get(i).GPA);
+			}
+
+			for (int i = 0; i < GPAs.size(); i++) {
+				if (!(GPAs.get(i).size() == 0)) {
+					float GPAsum = 0;
+					for (int j = 0; j < GPAs.get(i).size(); j++) {
+						GPAsum += GPAs.get(i).get(j);
+					}
+					System.out.println(teachers.get(i) + ": " + (GPAsum / GPAs.get(i).size()));
+				}
+			}
+		}
+		else if (mode == 2) {
+			// Analytics based on bus route
+			ArrayList<Integer> busses = new ArrayList<Integer>();
+
+			for (int i = 0; i < rows.size(); i++) {
+				if (!busses.contains((Integer)rows.get(i).Bus)) {
+					busses.add((Integer)rows.get(i).Bus);
+				}
+			}
+
+			ArrayList<ArrayList<Float>> GPAs = new ArrayList<ArrayList<Float>>();
+			for (int i = 0; i < busses.size(); i++) {
+				GPAs.add(new ArrayList<Float>());
+			}
+
+			for (int i = 0; i < rows.size(); i++) {
+				int index = busses.indexOf((Integer)rows.get(i).Bus);
+				GPAs.get(index).add(rows.get(i).GPA);
+			}
+
+			for (int i = 0; i < GPAs.size(); i++) {
+				if (!(GPAs.get(i).size() == 0)) {
+					float GPAsum = 0;
+					for (int j = 0; j < GPAs.get(i).size(); j++) {
+						GPAsum += GPAs.get(i).get(j);
+					}
+					System.out.println(busses.get(i) + ": " + (GPAsum / GPAs.get(i).size()));
+				}
+			}
 		}
 	}
 }
