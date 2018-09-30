@@ -1,5 +1,6 @@
 sschurk@unix3:~/csc365/lab1/part1 $ java schoolsearch
-File 'students.txt' successfully loaded
+File 'list.txt' successfully loaded
+File 'teachers.txt' successfully loaded
 Please enter a search instruction, or enter 'Q' to quit
 S: BERBES
 BERBES, DICK, 2, 108, HAMER, GAVIN
@@ -102,13 +103,134 @@ Info
 Please enter a search instruction, or enter 'Q' to quit
 Q
 sschurk@unix3:~/csc365/lab1/part1 $ java schoolsearch
-File 'students.txt' successfully loaded
+File 'list.txt' successfully loaded
+File 'teachers.txt' successfully loaded
 Please enter a search instruction, or enter 'Q' to quit
 Quit
 sschurk@unix3:~/csc365/lab1/part1 $ java schoolsearch
-Error reading file
+Error reading file 'list.txt'
 sschurk@unix3:~/csc365/lab1/part1 $ java schoolsearch
-File 'students.txt' successfully loaded
+File 'list.txt' successfully loaded
+File 'teachers.txt' successfully loaded
 Please enter a search instruction, or enter 'Q' to quit
 Test_Instruction:
+Please enter a search instruction, or enter 'Q' to quit
+File 'list.txt' successfully loaded
+File 'teachers.txt' successfully loaded
+Please enter a search instruction, or enter 'Q' to quit
+CS: 101
+DURAND, CARLEE
+Please enter a search instruction, or enter 'Q' to quit
+ClassroomStudents: 101
+DURAND, CARLEE
+Please enter a search instruction, or enter 'Q' to quit
+CS: 500
+Please enter a search instruction, or enter 'Q' to quit
+CT: 101
+COOL, REUBEN
+Please enter a search instruction, or enter 'Q' to quit
+ClassroomTeachers: 101
+COOL, REUBEN
+Please enter a search instruction, or enter 'Q' to quit
+CT: 500
+Please enter a search instruction, or enter 'Q' to quit
+GT: 1
+FALKER, ADOLPH
+Please enter a search instruction, or enter 'Q' to quit
+GradeTeachers: 1
+FALKER, ADOLPH
+Please enter a search instruction, or enter 'Q' to quit
+GT: 0
+Please enter a search instruction, or enter 'Q' to quit
+GT: -1
+Please enter a search instruction, or enter 'Q' to quit
+E
+101: 1
+102: 5
+103: 2
+104: 2
+105: 6
+106: 2
+107: 7
+108: 11
+109: 5
+110: 2
+111: 9
+112: 8
+Please enter a search instruction, or enter 'Q' to quit
+Enrollment
+101: 1
+102: 5
+103: 2
+104: 2
+105: 6
+106: 2
+107: 7
+108: 11
+109: 5
+110: 2
+111: 9
+112: 8
+Please enter a search instruction, or enter 'Q' to quit
+An: G
+1: 2.995
+2: 2.9461534
+3: 3.0488887
+4: 2.9513333
+6: 2.9771428
+Please enter a search instruction, or enter 'Q' to quit
+Analytics: Grade
+1: 2.995
+2: 2.9461534
+3: 3.0488887
+4: 2.9513333
+6: 2.9771428
+Please enter a search instruction, or enter 'Q' to quit
+An: T
+FAFARD: 3.0142856
+GAMBREL: 2.9599998
+KERBS: 2.9760003
+STEIB: 2.9
+NISTENDIRK: 2.962222
+ALPERT: 3.17
+HANTZ: 2.9133332
+HAMER: 2.9545455
+BODZIONY: 3.0900002
+CHIONCHIO: 2.985
+FALKER: 2.995
+COOL: 2.91
+Please enter a search instruction, or enter 'Q' to quit
+Analytics: Teacher
+FAFARD: 3.0142856
+GAMBREL: 2.9599998
+KERBS: 2.9760003
+STEIB: 2.9
+NISTENDIRK: 2.962222
+ALPERT: 3.17
+HANTZ: 2.9133332
+HAMER: 2.9545455
+BODZIONY: 3.0900002
+CHIONCHIO: 2.985
+FALKER: 2.995
+COOL: 2.91
+Please enter a search instruction, or enter 'Q' to quit
+An: B
+52: 2.885
+0: 2.9525
+56: 2.9216669
+51: 3.02
+53: 3.0555556
+55: 3.0366666
+54: 2.9416668
+Please enter a search instruction, or enter 'Q' to quit
+Analytics: Bus
+52: 2.885
+0: 2.9525
+56: 2.9216669
+51: 3.02
+53: 3.0555556
+55: 3.0366666
+54: 2.9416668
+Please enter a search instruction, or enter 'Q' to quit
+An: BAD
 Please enter a search instruction, or enter 'Q' to quit

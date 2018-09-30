@@ -215,12 +215,12 @@ Quit
 
 //Test 31
 //Testing R13
-//File exists, named correctly, in correct directory
-//Expected: File 'students.txt' successfully loaded
+//Files exist, named correctly, in correct directory
+//Expected: File 'list.txt' successfully loaded\n File 'teachers.txt' successfully loaded
 
 //Test 32
 //Testing E1
-//File does not exist
+//'list.txt' does not exist
 //Expected: Error reading file - then program quits gracefully
 
 //Test 33
@@ -239,3 +239,136 @@ Test_Instruction:
 //Testing R2 
 //Invoke the program without command line parameters
 //Expected: Program runs correctly and passes all of these tests
+
+//Test 36
+//Testing NR1
+//Short command, valid classroom number
+//Expected: DURAND, CARLEE
+
+CS: 101
+
+//Test 37
+//Testing NR1
+//Long command, valid classroom number
+//Expected: DURAND, CARLEE
+
+ClassroomStudents: 101
+
+//Test 38
+//Testing NR1
+//invalid classroom number
+//Expected: no output
+
+CS: 500
+
+//Test 39
+//Testing NR2
+//Short command, valid classroom number
+//Expected: COOL, REUBEN
+
+CT: 101
+
+//Test 40
+//Testing NR2
+//Long command, valid classroom number
+//Expected: COOL, REUBEN
+
+ClassroomTeachers: 101
+
+//Test 41
+//Testing NR2
+//invalid classroom number
+//Expected: no output
+
+CT: 500
+
+//Test 42
+//Testing NR3
+//Short command, valid grade
+//Expected: FALKER, ADOLPH
+
+GT: 1
+
+//Test 43
+//Testing NR3
+//Long command, valid grade
+//Expected: FALKER, ADOLPH
+
+GradeTeachers: 1
+
+//Test 44
+//Testing NR3
+//valid grade, 0 students in grade
+//Expected: no output
+
+GT: 0
+
+//Test 45
+//Testing NR3
+//invalid grade
+//Expected: no output
+
+GT: -1
+
+//Test 46
+//Testing NR4
+//Short command
+//Expected: 101: 1\n 102: 5\n 103: 2\n 104: 2\n 105: 6\n 106: 2\n 107: 7\n 108: 11\n 109: 5\n 110: 2\n 111: 9\n 112: 8
+
+E
+
+//Test 47
+//Testing NR4
+//Long command
+//Expected: 101: 1\n 102: 5\n 103: 2\n 104: 2\n 105: 6\n 106: 2\n 107: 7\n 108: 11\n 109: 5\n 110: 2\n 111: 9\n 112: 8
+
+Enrollment
+
+//Test 48
+//Testing NR5 - Grade
+//Short command
+//Expected: 1: 2.995\n 2: 2.9461534\n 3: 3.0488887\n 4: 2.9513333\n 6: 2.9771428
+
+An: G
+
+//Test 49
+//Testing NR5 - Grade
+//Long command
+//Expected: 1: 2.995\n 2: 2.9461534\n 3: 3.0488887\n 4: 2.9513333\n 6: 2.9771428
+
+Analytics: Grade
+
+//Test 50
+//Testing NR5 - Teacher
+//Short command
+//Expected: FAFARD: 3.0142856\n GAMBREL: 2.9599998\n KERBS: 2.9760003\n STEIB: 2.9\n NISTENDIRK: 2.962222\n ALPERT: 3.17\n HANTZ: 2.9133332\n HAMER: 2.9545455\n BODZIONY: 3.0900002\n CHIONCHIO: 2.985\n FALKER: 2.995\n COOL: 2.91
+
+An: T
+
+//Test 51
+//Testing NR5 - Teacher
+//Long command
+//Expected: FAFARD: 3.0142856\n GAMBREL: 2.9599998\n KERBS: 2.9760003\n STEIB: 2.9\n NISTENDIRK: 2.962222\n ALPERT: 3.17\n HANTZ: 2.9133332\n HAMER: 2.9545455\n BODZIONY: 3.0900002\n CHIONCHIO: 2.985\n FALKER: 2.995\n COOL: 2.91
+
+Analytics: Teacher
+
+//Test 52
+//Testing NR5 - Bus
+//Short command
+//Expected: 52: 2.885\n 0: 2.9525\n 56: 2.9216669\n 51: 3.02\n 53: 3.0555556\n 55: 3.0366666\n 54: 2.9416668
+
+An: B
+
+//Test 53
+//Testing NR5 - Bus
+//Long command
+//Expected: 52: 2.885\n 0: 2.9525\n 56: 2.9216669\n 51: 3.02\n 53: 3.0555556\n 55: 3.0366666\n 54: 2.9416668
+
+Analytics: Bus
+
+//Test 54
+//Testing NR5
+//invalid mode
+//Expected: no output
+
+An: BAD

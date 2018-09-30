@@ -50,8 +50,8 @@ Follow on screen prompts:
   E\[nrollment] Provides the enrollment broken down by classroom.
 
   NR5
-  An\[alysis]\: G\[rade] Lists all grades of students and the average GPA of the students within each grade
+  An\[alytics]\: G\[rade] Lists all grades of students and the average GPA of the students within each grade
 
-  An\[alysis]\: T\[eacher] Lists all teachers of students and the average GPA of the students that have that teacher
+  An\[alytics]\: T\[eacher] Lists all teachers of students and the average GPA of the students that have that teacher
 
-  An\[alysis]\: B\[us] Lists all bus routes of students and the average GPA of the students that take that bus route
+  An\[alytics]\: B\[us] Lists all bus routes of students and the average GPA of the students that take that bus route
